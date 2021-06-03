@@ -31,6 +31,7 @@ namespace UTN.WinForms.UI
         {
             this.components = new System.ComponentModel.Container();
             this.pnlInfo = new System.Windows.Forms.Panel();
+            this.wbInformation = new System.Windows.Forms.WebBrowser();
             this.dgvDetalles = new System.Windows.Forms.DataGridView();
             this.clmMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmImpuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +65,7 @@ namespace UTN.WinForms.UI
             this.btnCalcular = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.errNameAndID = new System.Windows.Forms.ErrorProvider(this.components);
-            this.wbInformation = new System.Windows.Forms.WebBrowser();
+            this.btnEnviarCorreo = new System.Windows.Forms.Button();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.pnlOpciones.SuspendLayout();
@@ -83,6 +84,14 @@ namespace UTN.WinForms.UI
             this.pnlInfo.Name = "pnlInfo";
             this.pnlInfo.Size = new System.Drawing.Size(357, 397);
             this.pnlInfo.TabIndex = 2;
+            // 
+            // wbInformation
+            // 
+            this.wbInformation.Location = new System.Drawing.Point(7, 125);
+            this.wbInformation.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbInformation.Name = "wbInformation";
+            this.wbInformation.Size = new System.Drawing.Size(341, 259);
+            this.wbInformation.TabIndex = 1;
             // 
             // dgvDetalles
             // 
@@ -387,6 +396,7 @@ namespace UTN.WinForms.UI
             // pnlBotones
             // 
             this.pnlBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBotones.Controls.Add(this.btnEnviarCorreo);
             this.pnlBotones.Controls.Add(this.btnSalir);
             this.pnlBotones.Controls.Add(this.btnCalcular);
             this.pnlBotones.Controls.Add(this.btnLimpiar);
@@ -432,13 +442,16 @@ namespace UTN.WinForms.UI
             // 
             this.errNameAndID.ContainerControl = this;
             // 
-            // wbInformation
+            // btnEnviarCorreo
             // 
-            this.wbInformation.Location = new System.Drawing.Point(7, 125);
-            this.wbInformation.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wbInformation.Name = "wbInformation";
-            this.wbInformation.Size = new System.Drawing.Size(341, 259);
-            this.wbInformation.TabIndex = 1;
+            this.btnEnviarCorreo.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarCorreo.Location = new System.Drawing.Point(388, 8);
+            this.btnEnviarCorreo.Name = "btnEnviarCorreo";
+            this.btnEnviarCorreo.Size = new System.Drawing.Size(136, 48);
+            this.btnEnviarCorreo.TabIndex = 3;
+            this.btnEnviarCorreo.Text = "Enviar Correo";
+            this.btnEnviarCorreo.UseVisualStyleBackColor = true;
+            this.btnEnviarCorreo.Click += new System.EventHandler(this.btnEnviarCorreo_Click);
             // 
             // frmPrincipal
             // 
@@ -450,6 +463,7 @@ namespace UTN.WinForms.UI
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlInfo);
             this.Name = "frmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlInfo.ResumeLayout(false);
@@ -503,5 +517,6 @@ namespace UTN.WinForms.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
         private System.Windows.Forms.ErrorProvider errNameAndID;
         private System.Windows.Forms.WebBrowser wbInformation;
+        private System.Windows.Forms.Button btnEnviarCorreo;
     }
 }
