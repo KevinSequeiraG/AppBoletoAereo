@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using UTN.WinForms.Clases;
+using UTN.WinForms.Correo;
 using UTN.WinForms.Enums;
 using UTN.WinForms.Gestor;
 
@@ -160,6 +161,12 @@ namespace UTN.WinForms.UI
             chkOtros.Enabled = false;
             chkAnimales.Checked = false;
             chkOtros.Checked = false;
+        }
+
+        private void btnEnviarCorreo_Click(object sender, EventArgs e)
+        {
+            frmCorreo ventana = new frmCorreo();
+            ventana.Show();
         }
     }
 }
