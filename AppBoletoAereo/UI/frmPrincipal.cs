@@ -49,7 +49,22 @@ namespace UTN.WinForms.UI
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-
+            txtID.Text = "";
+            txtImpuesto.Text = "";
+            txtMonto.Text = "";
+            txtNombre.Text = "";
+            txtTotal.Text = "";
+            chkAnimales.Checked = false;
+            chkEquipaje.Checked = false;
+            chkOtros.Checked = false;
+            rdbFemenino.Checked = false;
+            rdbMasculino.Checked = false;
+            rdbNormal.Checked = false;
+            rdbPrimeraClase.Checked = false;
+            cboDestino.SelectedIndex = 0;
+            cboNacionalidad.SelectedIndex = 0;
+            dgvDetalles.Rows.Clear();
+            wbInformation.DocumentText = "";
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
@@ -102,7 +117,7 @@ namespace UTN.WinForms.UI
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void txtID_Validating(object sender, CancelEventArgs e)
