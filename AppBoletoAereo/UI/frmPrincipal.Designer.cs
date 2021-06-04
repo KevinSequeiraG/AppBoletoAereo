@@ -66,6 +66,7 @@ namespace UTN.WinForms.UI
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.errNameAndID = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnEnviarCorreo = new System.Windows.Forms.Button();
+            this.btnQR = new System.Windows.Forms.Button();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.pnlOpciones.SuspendLayout();
@@ -396,6 +397,7 @@ namespace UTN.WinForms.UI
             // pnlBotones
             // 
             this.pnlBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBotones.Controls.Add(this.btnQR);
             this.pnlBotones.Controls.Add(this.btnEnviarCorreo);
             this.pnlBotones.Controls.Add(this.btnSalir);
             this.pnlBotones.Controls.Add(this.btnCalcular);
@@ -453,6 +455,17 @@ namespace UTN.WinForms.UI
             this.btnEnviarCorreo.UseVisualStyleBackColor = true;
             this.btnEnviarCorreo.Click += new System.EventHandler(this.btnEnviarCorreo_Click);
             // 
+            // btnQR
+            // 
+            this.btnQR.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQR.Location = new System.Drawing.Point(562, 8);
+            this.btnQR.Name = "btnQR";
+            this.btnQR.Size = new System.Drawing.Size(136, 48);
+            this.btnQR.TabIndex = 4;
+            this.btnQR.Text = "Generar QR";
+            this.btnQR.UseVisualStyleBackColor = true;
+            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,6 +478,7 @@ namespace UTN.WinForms.UI
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
+            this.Activated += new System.EventHandler(this.frmPrincipal_Activated);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
@@ -518,5 +532,6 @@ namespace UTN.WinForms.UI
         private System.Windows.Forms.ErrorProvider errNameAndID;
         private System.Windows.Forms.WebBrowser wbInformation;
         private System.Windows.Forms.Button btnEnviarCorreo;
+        private System.Windows.Forms.Button btnQR;
     }
 }

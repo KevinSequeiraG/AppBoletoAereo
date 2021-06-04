@@ -46,6 +46,7 @@ namespace UTN.WinForms.UI
             chkAnimales.Enabled = false;
             chkEquipaje.Enabled = false;
             chkOtros.Enabled = false;
+
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -70,48 +71,57 @@ namespace UTN.WinForms.UI
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            TipoBoleto tipo = new TipoBoleto();
-            user = new Usuario();
-            if (rdbNormal.Checked)
+            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtID.Text) || (rdbFemenino.Checked == false && rdbMasculino.Checked == false) || (rdbNormal.Checked == false && rdbPrimeraClase.Checked == false))
             {
-                tipo = TipoBoleto.Normal;
+                MessageBox.Show("Debe llenar toda la informacion necesaria");
+                return;
             }
-            else if (rdbPrimeraClase.Checked)
+            else
             {
-                tipo = TipoBoleto.PrimeraClase;
-            }
-            if (rdbFemenino.Checked)
-            {
-                user.genero = rdbFemenino.ToString();
-            }else
-            {
-                user.genero = rdbMasculino.ToString();
-            }
-            user._Boleto = FactoryBoleto.CreateBoleto(tipo, (Pais)cboDestino.SelectedItem, chkEquipaje.Checked, tipo.ToString(), chkAnimales.Checked, chkOtros.Checked);
-            user.nombre = txtNombre.Text;
-            user.id = txtID.Text;
-            user.nacionalidad = cboNacionalidad.SelectedItem.ToString();
+                TipoBoleto tipo = new TipoBoleto();
+                user = new Usuario();
+                if (rdbNormal.Checked)
+                {
+                    tipo = TipoBoleto.Normal;
+                }
+                else if (rdbPrimeraClase.Checked)
+                {
+                    tipo = TipoBoleto.PrimeraClase;
+                }
+                if (rdbFemenino.Checked)
+                {
+                    user.genero = rdbFemenino.ToString();
+                }
+                else
+                {
+                    user.genero = rdbMasculino.ToString();
+                }
+                user._Boleto = FactoryBoleto.CreateBoleto(tipo, (Pais)cboDestino.SelectedItem, chkEquipaje.Checked, tipo.ToString(), chkAnimales.Checked, chkOtros.Checked);
+                user.nombre = txtNombre.Text;
+                user.id = txtID.Text;
+                user.nacionalidad = cboNacionalidad.SelectedItem.ToString();
 
-            Gestor1 gestor = new Gestor1(user);
+                Gestor1 gestor = new Gestor1(user);
 
-            txtMonto.Text = gestor.GetMonto().ToString();
-            txtImpuesto.Text = gestor.GetTax().ToString();
-            txtTotal.Text = gestor.GetTotal().ToString();
+                txtMonto.Text = gestor.GetMonto().ToString();
+                txtImpuesto.Text = gestor.GetTax().ToString();
+                txtTotal.Text = gestor.GetTotal().ToString();
 
-            XML doc = new XML();
-            doc.CrearArchivoXML(user);
-            dgvDetalles.Rows.Clear();
-            dgvDetalles.Rows.Add(gestor.GetMonto(), gestor.GetTax(), gestor.GetTotal());
+                XML doc = new XML();
+                doc.CrearArchivoXML(user);
+                dgvDetalles.Rows.Clear();
+                dgvDetalles.Rows.Add(gestor.GetMonto(), gestor.GetTax(), gestor.GetTotal());
 
-            XmlTextReader xmlTextReader = new XmlTextReader(doc.Ruta);
+                XmlTextReader xmlTextReader = new XmlTextReader(doc.Ruta);
 
-            try
-            {
-                this.wbInformation.Url = new Uri(doc.Ruta);
-            }
-            catch (Exception er)
-            {
-                MessageBox.Show("Error :" + er.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    this.wbInformation.Url = new Uri(doc.Ruta);
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show("Error :" + er.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
         }
@@ -167,6 +177,18 @@ namespace UTN.WinForms.UI
         {
             frmCorreo ventana = new frmCorreo();
             ventana.Show();
+        }
+
+        private void frmPrincipal_Activated(object sender, EventArgs e)
+        {
+            txtID.Focus();
+        }
+
+        private void btnQR_Click(object sender, EventArgs e)
+        {
+            frmQR ventana = new frmQR();
+            ventana.Show();
+
         }
     }
 }

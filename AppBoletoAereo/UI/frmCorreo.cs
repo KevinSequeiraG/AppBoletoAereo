@@ -20,8 +20,6 @@ namespace UTN.WinForms.UI
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            frmPrincipal ventana = new frmPrincipal();
-            ventana.Show();
             this.Close();
         }
 
