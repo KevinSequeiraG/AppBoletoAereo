@@ -67,6 +67,7 @@ namespace UTN.WinForms.UI
             this.errNameAndID = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnEnviarCorreo = new System.Windows.Forms.Button();
             this.btnQR = new System.Windows.Forms.Button();
+            this.btnJson = new System.Windows.Forms.Button();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.pnlOpciones.SuspendLayout();
@@ -397,6 +398,7 @@ namespace UTN.WinForms.UI
             // pnlBotones
             // 
             this.pnlBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBotones.Controls.Add(this.btnJson);
             this.pnlBotones.Controls.Add(this.btnQR);
             this.pnlBotones.Controls.Add(this.btnEnviarCorreo);
             this.pnlBotones.Controls.Add(this.btnSalir);
@@ -466,6 +468,17 @@ namespace UTN.WinForms.UI
             this.btnQR.UseVisualStyleBackColor = true;
             this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
             // 
+            // btnJson
+            // 
+            this.btnJson.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJson.Location = new System.Drawing.Point(722, 8);
+            this.btnJson.Name = "btnJson";
+            this.btnJson.Size = new System.Drawing.Size(136, 48);
+            this.btnJson.TabIndex = 5;
+            this.btnJson.Text = "Guardar JSON";
+            this.btnJson.UseVisualStyleBackColor = true;
+            this.btnJson.Click += new System.EventHandler(this.btnJson_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,5 +546,6 @@ namespace UTN.WinForms.UI
         private System.Windows.Forms.WebBrowser wbInformation;
         private System.Windows.Forms.Button btnEnviarCorreo;
         private System.Windows.Forms.Button btnQR;
+        private System.Windows.Forms.Button btnJson;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -189,6 +190,16 @@ namespace UTN.WinForms.UI
             frmQR ventana = new frmQR();
             ventana.Show();
 
+        }
+
+        private void btnJson_Click(object sender, EventArgs e)
+        {
+            XML xml = new XML();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(xml.Ruta);
+
+            string json = JsonConvert.SerializeObject(doc);
+            System.IO.File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\BoletosJson.json" , json);
         }
     }
 }
