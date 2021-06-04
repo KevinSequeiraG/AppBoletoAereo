@@ -61,13 +61,13 @@ namespace UTN.WinForms.UI
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.pnlBotones = new System.Windows.Forms.Panel();
+            this.btnJson = new System.Windows.Forms.Button();
+            this.btnQR = new System.Windows.Forms.Button();
+            this.btnEnviarCorreo = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.errNameAndID = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnEnviarCorreo = new System.Windows.Forms.Button();
-            this.btnQR = new System.Windows.Forms.Button();
-            this.btnJson = new System.Windows.Forms.Button();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.pnlOpciones.SuspendLayout();
@@ -409,10 +409,43 @@ namespace UTN.WinForms.UI
             this.pnlBotones.Size = new System.Drawing.Size(884, 68);
             this.pnlBotones.TabIndex = 4;
             // 
+            // btnJson
+            // 
+            this.btnJson.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJson.Location = new System.Drawing.Point(272, 8);
+            this.btnJson.Name = "btnJson";
+            this.btnJson.Size = new System.Drawing.Size(136, 48);
+            this.btnJson.TabIndex = 5;
+            this.btnJson.Text = "Guardar JSON";
+            this.btnJson.UseVisualStyleBackColor = true;
+            this.btnJson.Click += new System.EventHandler(this.btnJson_Click);
+            // 
+            // btnQR
+            // 
+            this.btnQR.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQR.Location = new System.Drawing.Point(607, 8);
+            this.btnQR.Name = "btnQR";
+            this.btnQR.Size = new System.Drawing.Size(136, 48);
+            this.btnQR.TabIndex = 4;
+            this.btnQR.Text = "Generar QR";
+            this.btnQR.UseVisualStyleBackColor = true;
+            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
+            // 
+            // btnEnviarCorreo
+            // 
+            this.btnEnviarCorreo.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarCorreo.Location = new System.Drawing.Point(445, 8);
+            this.btnEnviarCorreo.Name = "btnEnviarCorreo";
+            this.btnEnviarCorreo.Size = new System.Drawing.Size(136, 48);
+            this.btnEnviarCorreo.TabIndex = 3;
+            this.btnEnviarCorreo.Text = "Enviar Correo";
+            this.btnEnviarCorreo.UseVisualStyleBackColor = true;
+            this.btnEnviarCorreo.Click += new System.EventHandler(this.btnEnviarCorreo_Click);
+            // 
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(268, 8);
+            this.btnSalir.Location = new System.Drawing.Point(777, 8);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(81, 48);
             this.btnSalir.TabIndex = 2;
@@ -445,39 +478,6 @@ namespace UTN.WinForms.UI
             // errNameAndID
             // 
             this.errNameAndID.ContainerControl = this;
-            // 
-            // btnEnviarCorreo
-            // 
-            this.btnEnviarCorreo.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviarCorreo.Location = new System.Drawing.Point(388, 8);
-            this.btnEnviarCorreo.Name = "btnEnviarCorreo";
-            this.btnEnviarCorreo.Size = new System.Drawing.Size(136, 48);
-            this.btnEnviarCorreo.TabIndex = 3;
-            this.btnEnviarCorreo.Text = "Enviar Correo";
-            this.btnEnviarCorreo.UseVisualStyleBackColor = true;
-            this.btnEnviarCorreo.Click += new System.EventHandler(this.btnEnviarCorreo_Click);
-            // 
-            // btnQR
-            // 
-            this.btnQR.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQR.Location = new System.Drawing.Point(562, 8);
-            this.btnQR.Name = "btnQR";
-            this.btnQR.Size = new System.Drawing.Size(136, 48);
-            this.btnQR.TabIndex = 4;
-            this.btnQR.Text = "Generar QR";
-            this.btnQR.UseVisualStyleBackColor = true;
-            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
-            // 
-            // btnJson
-            // 
-            this.btnJson.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJson.Location = new System.Drawing.Point(722, 8);
-            this.btnJson.Name = "btnJson";
-            this.btnJson.Size = new System.Drawing.Size(136, 48);
-            this.btnJson.TabIndex = 5;
-            this.btnJson.Text = "Guardar JSON";
-            this.btnJson.UseVisualStyleBackColor = true;
-            this.btnJson.Click += new System.EventHandler(this.btnJson_Click);
             // 
             // frmPrincipal
             // 
